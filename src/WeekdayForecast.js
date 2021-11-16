@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherIcon from "./images/weather-icon.png";
+import "./WeekdayForecast.css"
 
 export default function WeekdayForecast(props) {
   return (
