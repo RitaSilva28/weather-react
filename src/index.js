@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Form from "./Form";
-import Hour from "./Hour";
-import Conditions from "./Conditions";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 import "./styles.css";
@@ -17,8 +15,6 @@ function App() {
       </h4>{" "}
       <div className="app-container p-5">
         <Form />
-        <Hour />
-        <Conditions />
         <Forecast />
       </div>
       <Footer />
