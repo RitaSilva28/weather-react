@@ -1,0 +1,57 @@
+body {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  background: no-repeat linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  text-transform: uppercase;
+  color: #404969;
+}
+
+h2 {
+  text-align: center;
+  color: #404969;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 400;
+  color: #404969;
+}
+h4 {
+  text-align: center;
+  font-weight: 300;
+  color: #404969;
+}
+
+h5 {
+  text-align: center;
+  color: #404969;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+li {
+  text-align: center;
+}
+
+.container {
+  display: block;
+  margin: 10px auto;
+  max-width: 75%;
+}
+
+.app-container {
+  border: 2px #404969 solid;
+  border-radius: 15px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+  margin-top: 20px;
+}

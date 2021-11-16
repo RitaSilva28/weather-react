@@ -1,17 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import Form from "./Form";
+import Hour from "./Hour";
+import Conditions from "./Conditions";
+import Forecast from "./Forecast";
+import Footer from "./Footer";
+import "./styles.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function App() {
+  return (
+    <div className="container">
+      <h2>Weather Forecast</h2>
+      <h4>
+        Search for other cities to see me change colors depending on the
+        temperature 😎
+      </h4>{" "}
+      <div className="app-container p-5">
+        <Form />
+        <Hour />
+        <Conditions />
+        <Forecast />
+      </div>
+      <Footer />
+    </div>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
