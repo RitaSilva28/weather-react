@@ -1,4 +1,7 @@
 .current-temp-image {
     width: 200px;
   }
-  
+
+  #city-displayed{
+    text-transform: capitalize;
+  }
