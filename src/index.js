@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Form from "./Form";
+import Weather from "./Weather";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 import "./styles.css";
@@ -14,7 +14,7 @@ function App() {
         temperature 😎
       </h4>{" "}
       <div className="app-container p-5">
-        <Form />
+        <Weather />
         <Forecast />
       </div>
       <Footer />

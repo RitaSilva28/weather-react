@@ -3,7 +3,7 @@ import Hour from"./Hour"
 import Conditions from "./Conditions"
 import axios from "axios"
 
-import "./Form.css";
+import "./Weather.css";
 
 export default function Form() {
 

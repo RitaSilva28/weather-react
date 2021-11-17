@@ -2,6 +2,11 @@
     width: 200px;
   }
 
+  #weather-conditions{
+    text-transform: capitalize;
+
+  }
+
   #city-displayed{
     text-transform: capitalize;
   }
