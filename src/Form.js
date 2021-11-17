@@ -22,24 +22,26 @@ export default function Form() {
        setCity(inputCity)
    }
 
-    
+
+
 
    function getPosition(position) {
+
+
        let longitude = position.coords.longitude;
        let latitude = position.coords.latitude;
        let apiKey = "4320290f544997238287ed9e19b9df8c";
      
        let urlCity = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric
        `;
-       console.log(urlCity);
 
-       axios.get(urlCity).then(setCurrentLocation);
+       axios.get(urlCity).then(function(response){
+setCity(response.data.name)
+       });
+
      }
 
-   function setCurrentLocation(response){
-setCity(response.data.name) 
 
-} 
 
     
    
@@ -65,7 +67,7 @@ setCity(response.data.name)
         value="Submit ✅"
       />
       <input
-      onClick={navigator.geolocation.getCurrentPosition(getPosition)}
+      onClick={function(){navigator.geolocation.getCurrentPosition(getPosition)}}
         type="button"
         id="current-location-button"
         class="col-lg-3 me-lg-3 p-1 mb-lg-0 rounded button"
