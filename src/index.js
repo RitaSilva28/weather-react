@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Weather from "./Weather";
-import Forecast from "./Forecast";
 import Footer from "./Footer";
 import "./styles.css";
 
+
 function App() {
+
+
+
   return (
     <div className="container">
       <h2>Weather Forecast</h2>
@@ -15,7 +18,6 @@ function App() {
       </h4>{" "}
       <div className="app-container p-5">
         <Weather />
-        <Forecast />
       </div>
       <Footer />
     </div>

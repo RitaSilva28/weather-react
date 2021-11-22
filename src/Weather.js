@@ -5,7 +5,7 @@ import axios from "axios"
 
 import "./Weather.css";
 
-export default function Form() {
+export default function Weather() {
 
     let[city, setCity]=useState("")
 
@@ -42,14 +42,7 @@ setCity(response.data.name)
      }
 
 
-
-    
-   
-
-
-
-
-  return (
+ return (
     <div >
 
 <form onSubmit={handleSubmit} class="row">

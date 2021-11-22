@@ -4,6 +4,9 @@ import WeekdayForecast from "./WeekdayForecast";
 import "./Forecast.css";
 
 export default function Forecast(props) {
+
+console.log(props.temperature)
+
   return (
     <div className="weather-forecast row mx-auto mt-5" id="forecast">
       <WeekdayForecast weekday="Monday" maxTemp="23" minTemp="17" />
