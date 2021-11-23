@@ -1,15 +1,13 @@
 import React from "react";
-import WeekdayForecast from "./WeekdayForecast";
-import axios from "axios";
 
 import "./Forecast.css";
 
 export default function Forecast(props) {
 
-//   let apiKey="4320290f544997238287ed9e19b9df8c";
-//   let url=`https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`
+  let apiKey="4320290f544997238287ed9e19b9df8c";
+  let url=`https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`
 
-//   console.log(url)
+  console.log(url)
 
 
 
