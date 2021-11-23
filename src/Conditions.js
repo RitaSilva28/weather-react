@@ -227,7 +227,7 @@ axios.get(url).then(getData);
         </ul>
       </div>
 
-      <Forecast  temperature={temperature}/>
+      {/* <Forecast  temperature={temperature} city={city}/> */}
 
     </div>
   );
