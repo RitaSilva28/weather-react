@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import Weather from "./Weather";
 import Footer from "./Footer";
 import "./styles.css";
-import axios from "axios";
 
 
 function App() {
