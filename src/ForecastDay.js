@@ -18,9 +18,9 @@ export default function ForecastDay(props) {
     <div>
       <h5 className="WeatherForecast-day">{day()}</h5>
       <WeatherIcon code={props.data.weather[0].icon} size={36} />
-      <h3 className="weekday-max-temp">{props.data.temp.max}º</h3>
+      <h3 className="weekday-max-temp">{Math.round(props.data.temp.max)}º</h3>
 
-	  <h4 className="weekday-min-temp">{props.data.temp.min}º</h4>
+	  <h4 className="weekday-min-temp">{Math.round(props.data.temp.min)}º</h4>
 
       </div>
    
