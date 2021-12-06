@@ -1,10 +1,13 @@
 import React,{useState} from "react";
 import axios from"axios";
 import "./Conditions.css";
+import Forecast from "./Forecast";
 
 
 export default function Conditions(props) {
 let [city,setCity]=useState("")
+let[lat, setLat]=useState("");
+let[lon, setLon]=useState("");
 
 if(props.city===""){
 
@@ -12,11 +15,13 @@ if(props.city===""){
     function displayInitialData(position) {
         let longitude = position.coords.longitude;
         let latitude = position.coords.latitude;
-        let apiKey = "4320290f544997238287ed9e19b9df8c";
+        let apiKey = "efda7bc0f3f777eaecd0af08db6f63fa";
+
+        setLon(longitude)
+        setLat(latitude)
       
         let urlCity = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric
         `;
-        console.log(urlCity);
 
         axios.get(urlCity).then(setCurrentLocation);
       }
@@ -26,15 +31,13 @@ if(props.city===""){
 
 } 
 
-
-
 }else{
     
     city=props.city
 
     }
       
-    let apiKey = "4320290f544997238287ed9e19b9df8c";
+    let apiKey = "efda7bc0f3f777eaecd0af08db6f63fa";
 
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -44,6 +47,7 @@ if(props.city===""){
     let[wind, setWind]=useState("");
     let [humidity, setHumidity]=useState("");
     let[iconUrl, setIconUrl]=useState("");
+    let[coordinates, setCoordinates]=useState(null)
 
 
     function getData(response){
@@ -53,6 +57,7 @@ if(props.city===""){
         setWind(Math.round(response.data.wind.speed))
         setHumidity(Math.round(response.data.main.humidity))
         setIconUrl(`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+        setCoordinates(response.data.coord)
     }
 
 
@@ -201,21 +206,21 @@ axios.get(url).then(getData);
 
 
   return (
-    <div class="row current-container mt-3">
-      <h4 class="mb-4" id="weather-conditions">
+    <div className="row current-container mt-3">
+      <h4 className="mb-4" id="weather-conditions">
         Current conditions: {conditions}
       </h4>
 
-      <div class="col float-lg-end float-none">
+      <div className="col float-lg-end float-none">
         <img
-          class="col float-md-end current-temp-image"
+          className="col float-md-end current-temp-image"
           id="current-weather-image"
           src={iconUrl}
           alt="Weather Icon "
         />
       </div>
-      <div class="col" id="location-temperature">
-        <ul class="float-md-start mt-1">
+      <div className="col" id="location-temperature">
+        <ul className="float-md-start mt-1">
           <li>
             <h2 id="city-displayed">{city}</h2>
             <h2 id="temperature-displayed">{temperature}ºC</h2>
@@ -226,7 +231,8 @@ axios.get(url).then(getData);
         </ul>
       </div>
 
-      {/* <Forecast  temperature={temperature} city={city}/> */}
+      <Forecast   city={city} coordinates={coordinates}/> 
+
 
     </div>
   );

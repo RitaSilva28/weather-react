@@ -30,10 +30,14 @@ export default function Weather() {
 
        let longitude = position.coords.longitude;
        let latitude = position.coords.latitude;
-       let apiKey = "4320290f544997238287ed9e19b9df8c";
+       let apiKey = "efda7bc0f3f777eaecd0af08db6f63fa";
+
+     
      
        let urlCity = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric
        `;
+
+       console.log(urlCity)
 
        axios.get(urlCity).then(function(response){
 setCity(response.data.name)
@@ -45,25 +49,25 @@ setCity(response.data.name)
  return (
     <div >
 
-<form onSubmit={handleSubmit} class="row">
+<form onSubmit={handleSubmit} className="row">
 
       <input onChange={getCity}
         type="text"
         id="city-input"
-        class="col form-control mx-lg-3 mb-2 mb-lg-0"
+        className="col form-control mx-lg-3 mb-2 mb-lg-0"
         placeholder="Please insert a city (i.e. Paris)"
       />
       <input
         type="submit"
         id="search-button"
-        class="col-lg-3 me-lg-3 p-1 mb-2 mb-lg-0 rounded button"
+        className="col-lg-3 me-lg-3 p-1 mb-2 mb-lg-0 rounded button"
         value="Submit ✅"
       />
       <input
       onClick={function(){navigator.geolocation.getCurrentPosition(getPosition)}}
         type="button"
         id="current-location-button"
-        class="col-lg-3 me-lg-3 p-1 mb-lg-0 rounded button"
+        className="col-lg-3 me-lg-3 p-1 mb-lg-0 rounded button"
         value="Current Location 📍"
       />
 
@@ -72,6 +76,7 @@ setCity(response.data.name)
 
       <Hour/>
       <Conditions  city ={city} />
+
     </div>
   );
 
