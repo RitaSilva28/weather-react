@@ -212,7 +212,7 @@ function freezingTemperature() {
   type="submit"
   id="search-button"
   className="col-lg-3 me-lg-3 p-1 mb-2 mb-lg-0 rounded button"
-  value="Submit ✅"
+  value="Search ✅"
 />
 <input
 onClick={function(){navigator.geolocation.getCurrentPosition(getCurrentPosition)}}
